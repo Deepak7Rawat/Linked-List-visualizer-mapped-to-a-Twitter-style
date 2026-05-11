@@ -49,6 +49,17 @@ To show practical application, TweetList renders the exact same data structure i
 
 ### 4. Event Delegation & Animations
 
+### 👨‍💻 Author
+
+## Deepak Rawat
+
+🎓 BCA 2nd Semester Student  
+💻 Passionate About Programming & Development
+
+---
+
+### ⭐ If you like this project, give it a star on GitHub ⭐
+
 ## 📂 Project Structure
 
 ```text
@@ -59,19 +70,7 @@ To show practical application, TweetList renders the exact same data structure i
 
 
 * **Optimized Listening:** Instead of attaching event listeners to every individual button, the app uses global event delegation on the document body, parsing `data-act` attributes to trigger the correct linked list methods.
-
-
-### 👨‍💻 Author
-
-## Deepak Rawat
-
-🎓 BCA 2nd Semester Student  
-💻 Passionate About Programming & Development
-
----
-
-<div align="center">
-
-### ⭐ If you like this project, give it a star on GitHub ⭐
-
 * **Visual Feedback (Flashing):** When a node is created or found via the search function, its unique ID is temporarily stored in a `highlightIds` Set. The UI applies a glowing CSS animation to that specific node, helping users visually track exactly where the memory operation took place.
+
+
+
