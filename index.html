@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TweetList — Linked List Visualizer</title>
+  <meta name="description" content="A Twitter-style Linked List engine — insert, delete, traverse and search tweet nodes in singly or doubly linked list mode." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- decorative animated background blobs -->
+  <div class="blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar glass">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand">
+        <span class="brand-mark">⌬</span>
+        <span class="brand-text">Tweet<span class="text-gradient">List</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#visualizer">Visualizer</a>
+        <a href="#feed">Feed</a>
+        <a href="#tech">Tech</a>
+      </nav>
+      <a href="#" class="gh-btn" data-github title="View on GitHub">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.74.08-.74 1.21.09 1.85 1.25 1.85 1.25 1.08 1.85 2.84 1.32 3.53 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.18.78.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="hero">
+      <div class="grid-bg-mask"></div>
+      <div class="container hero-inner">
+        <div class="badge fade-in">✦ Data Structures · Visualized · Beautifully</div>
+        <h1 class="hero-title fade-in delay-1">
+          A <span class="text-gradient">Twitter-style</span><br/>
+          Linked List Engine
+        </h1>
+        <p class="hero-sub fade-in delay-2">
+          Insert, delete, traverse and search tweet nodes — all powered by a
+          hand-crafted linked list, wrapped in a futuristic glass UI.
+        </p>
+        <div class="hero-cta fade-in delay-3">
+          <a href="#visualizer" class="btn btn-primary">View Project →</a>
+          <a href="#" class="btn btn-ghost" data-github>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.74.08-.74 1.21.09 1.85 1.25 1.85 1.25 1.08 1.85 2.84 1.32 3.53 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.18.78.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
+
+        <div class="hero-preview fade-in delay-4">
+          <div class="hero-preview-glow"></div>
+          <div class="glass-strong preview-card">
+            <div class="preview-row">
+              <div class="preview-node float" style="animation-delay:0s">node[0]</div>
+              <span class="arrow">→</span>
+              <div class="preview-node float" style="animation-delay:.4s">node[1]</div>
+              <span class="arrow">→</span>
+              <div class="preview-node float" style="animation-delay:.8s">node[2]</div>
+              <span class="arrow">→</span>
+              <div class="preview-node float" style="animation-delay:1.2s">node[3]</div>
+              <span class="null-tag">NULL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="eyebrow">// About the project</p>
+        <h2 class="section-title">From <span class="text-gradient">C++</span> to a beautiful browser experience.</h2>
+        <p class="section-desc">A college DSA project reimagined as a portfolio-grade web app — every operation maps 1:1 to the underlying linked list code.</p>
+        <div class="grid-3">
+          <div class="glass card hover-lift">
+            <h3>📚 Academic core</h3>
+            <p>Built around a doubly &amp; singly linked list — the same data structure your DSA syllabus loves.</p>
+          </div>
+          <div class="glass card hover-lift">
+            <h3>🎨 Modern UI</h3>
+            <p>Glassmorphism, gradients, soft shadows and animated nodes — designed to look great in your portfolio.</p>
+          </div>
+          <div class="glass card hover-lift">
+            <h3>🔌 Backend ready</h3>
+            <p>UI is decoupled from logic — drop in any storage layer, no UI rework needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section id="features" class="section">
+      <div class="container">
+        <p class="eyebrow">// Features</p>
+        <h2 class="section-title">Everything a <span class="text-gradient">linked list</span> can do.</h2>
+        <div class="grid-3">
+          <div class="glass card hover-lift"><h3>➕ Insert</h3><p>At beginning, end, or any position — animated in real time.</p></div>
+          <div class="glass card hover-lift"><h3>🗑️ Delete</h3><p>Remove from head, tail, or by index. Pointers re-wire automatically.</p></div>
+          <div class="glass card hover-lift"><h3>🔍 Search</h3><p>Find by username or tweet ID with instant highlight feedback.</p></div>
+          <div class="glass card hover-lift"><h3>🔁 Traversal</h3><p>Forward in singly mode, forward &amp; backward in doubly mode.</p></div>
+          <div class="glass card hover-lift"><h3>🧠 Two modes</h3><p>Switch between singly and doubly linked list with one click.</p></div>
+          <div class="glass card hover-lift"><h3>🐦 Live feed</h3><p>Every node appears as a tweet card — auto-synced with the list.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== VISUALIZER ========== -->
+    <section id="visualizer" class="section">
+      <div class="container">
+        <p class="eyebrow">// Live Visualizer</p>
+        <h2 class="section-title">Watch your <span class="text-gradient">nodes</span> come alive.</h2>
+        <p class="section-desc">Choose Singly or Doubly — every operation animates through the list in real time.</p>
+
+        <!-- Mode picker -->
+        <div class="mode-row">
+          <div class="mode-toggle glass">
+            <button class="mode-btn active" data-mode="singly">→ singly list</button>
+            <button class="mode-btn" data-mode="doubly">⇄ doubly list</button>
+          </div>
+          <button id="traversalBtn" class="glass mode-side hidden">⇄ forward traversal</button>
+          <span class="mode-hint" id="modeHint">// each node → next</span>
+        </div>
+
+        <div class="vis-grid">
+          <!-- ========= OPERATION PANEL ========= -->
+          <aside class="glass panel">
+            <div class="panel-header">
+              <h3>Operations</h3>
+              <span class="count-pill"><span id="nodeCount">0</span> nodes</span>
+            </div>
+
+            <div class="tabs">
+              <button class="tab active" data-tab="insert">Insert</button>
+              <button class="tab" data-tab="delete">Delete</button>
+              <button class="tab" data-tab="search">Search</button>
+            </div>
+
+            <!-- INSERT -->
+            <div class="tab-panel active" data-panel="insert">
+              <label>Username</label>
+              <input id="insUser" type="text" placeholder="@handle" />
+              <label>Tweet</label>
+              <textarea id="insTweet" rows="2" placeholder="What's happening?"></textarea>
+              <label>Position (1-based, optional)</label>
+              <input id="insPos" type="number" min="1" placeholder="leave empty for end" />
+              <div class="btn-row">
+                <button class="btn btn-primary" data-act="ins-begin">Insert at Head</button>
+                <button class="btn btn-ghost" data-act="ins-end">Insert at Tail</button>
+                <button class="btn btn-ghost" data-act="ins-pos">Insert at Pos</button>
+              </div>
+            </div>
+
+            <!-- DELETE -->
+            <div class="tab-panel" data-panel="delete">
+              <label>Position (1-based, for "at position")</label>
+              <input id="delPos" type="number" min="1" placeholder="e.g. 2" />
+              <div class="btn-row">
+                <button class="btn btn-primary" data-act="del-begin">Delete Head</button>
+                <button class="btn btn-ghost" data-act="del-end">Delete Tail</button>
+                <button class="btn btn-ghost" data-act="del-pos">Delete at Pos</button>
+              </div>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="tab-panel" data-panel="search">
+              <label>Query (username or ID)</label>
+              <input id="searchQ" type="text" placeholder="elonmusk or TWEET1001" />
+              <div class="btn-row">
+                <button class="btn btn-primary" data-act="search">Search</button>
+              </div>
+              <div id="searchResults" class="search-results"></div>
+            </div>
+          </aside>
+
+          <!-- ========= CANVAS ========= -->
+          <div>
+            <div id="visCanvas" class="vis-canvas"></div>
+            <p class="caption">// <span id="capCount">0</span> nodes · mode = <span id="capMode" class="cyan">singly</span><span id="capDir"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEED ========== -->
+    <section id="feed" class="section">
+      <div class="container">
+        <p class="eyebrow">// Live Feed</p>
+        <h2 class="section-title">Your list, as a <span class="text-gradient">timeline</span>.</h2>
+        <p class="section-desc">Every node renders as a tweet card — synced with the visualizer above.</p>
+        <div id="feedList" class="feed-list"></div>
+      </div>
+    </section>
+
+    <!-- ========== TECH ========== -->
+    <section id="tech" class="section">
+      <div class="container">
+        <p class="eyebrow">// Tech stack</p>
+        <h2 class="section-title">Built with the <span class="text-gradient">essentials</span>.</h2>
+        <div class="tech-grid">
+          <div class="glass tech-pill">HTML5</div>
+          <div class="glass tech-pill">CSS3</div>
+          <div class="glass tech-pill">JavaScript</div>
+          <div class="glass tech-pill">Glassmorphism</div>
+          <div class="glass tech-pill">Linked List</div>
+          <div class="glass tech-pill">Responsive</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="brand-mark">⌬</span>
+        <span class="brand-text">Tweet<span class="text-gradient">List</span></span>
+      </div>
+      <p class="muted">© <span id="year"></span> TweetList. Built with ♥ for DSA.</p>
+      <a href="#" class="gh-btn" data-github>GitHub →</a>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
