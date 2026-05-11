@@ -1,6 +1,8 @@
+![Uploading LINKLIST_UI.png…]()
 
 ## TweetList — Standalone HTML/CSS/JS
-### 👨‍💻 Author
+
+## 👨‍💻 Author
 
 ## Deepak Rawat
 
@@ -10,6 +12,7 @@
 ---
 
 ### ⭐ If you like this project, give it a star on GitHub ⭐
+
 
 > **A modern, interactive Linked List visualizer mapped to a Twitter-style feed.**
 
